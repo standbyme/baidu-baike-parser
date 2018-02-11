@@ -1,4 +1,3 @@
-import * as Cheerio from 'cheerio'
 import { Option } from 'funfix-core'
 import * as _ from 'lodash'
 
