@@ -3,6 +3,7 @@ let gulp = require('gulp')
 let ts = require('gulp-typescript')
 let mocha = require('gulp-mocha')
 
+const merge2 = require('merge2')
 const tsProject = ts.createProject('tsconfig.json')
 
 
@@ -17,9 +18,10 @@ gulp.task('compile', gulp.series('clean', function compile_func(done) {
             done('TS compile fail')
         })
 
-    tsResult.js.pipe(gulp.dest('dist'))
-    tsResult.dts.pipe(gulp.dest('dist'))
-    return tsResult
+    return merge2(
+        tsResult.js.pipe(gulp.dest('dist')),
+        tsResult.dts.pipe(gulp.dest('dist'))
+    )
 }))
 
 gulp.task('test', gulp.series('compile', function test_func() {
