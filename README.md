@@ -3,7 +3,9 @@
 ## Install
 
 `npm install funfix-core`
+
 `npm install axios`
+
 `npm install baidu-baike-parser`
 
 ## Use
