@@ -20,7 +20,7 @@ async function get_html(url: string): Promise<string> {
     return data
 }
 
-async function get_from_link(link: string): Promise<{ abstract__opt: Option<string>, basic_info__opt: Option<Map<string, string>>, pic_url__opt: Option<string> }> {
+async function get_from_link(link: string) {
     const html__str = await get_html(link)
     return baidu_baike_parser(html__str)
 }
